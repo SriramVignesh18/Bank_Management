@@ -8,6 +8,7 @@ void createdacc();
 void login();
 void steps();
 void logout();
+void delacc();
 void fixed_dep();
 void loan();
 void balance1();
@@ -173,7 +174,7 @@ int main2(struct registration R1)
 	do
 	{
 		printf("\n************");
-		printf("\n 1)Check my Balance \t \t 2)Transfer Money \n 3)Withdraw Money \t \t 4)Fixed Deposit \n 5)Loan \t \t \t 6)Log out \n 7)Exit \nPlease Make an Option::");
+		printf("\n 1)Check my Balance \t \t 2)Transfer Money \n 3)Withdraw Money \t \t 4)Fixed Deposit \n 5)Loan \t \t \t 6)Log out \n 7)Delete Account \t \t 8)Exit \nPlease Make an Option::");
         scanf("%d",&opt);
 	switch(opt)
 	{
@@ -203,6 +204,10 @@ int main2(struct registration R1)
 	  	break;
 	  case 7:
 	  	system("cls");
+	  	delacc(R1);
+	  	break;
+	  case 8:
+	  	system("cls");
 	    exit(0);
 	    break;
 	  default:
@@ -212,7 +217,7 @@ int main2(struct registration R1)
 	printf("\n\n*******************************************************\n");
 	printf("*******************************************************\n");
 	printf("*******************************************************\n\n");
-	}while(opt!=7);
+	}while(opt!=8);
 	fclose(fp);
 	return 0;
 }
@@ -281,6 +286,11 @@ void login()
 			{
 				det(R1);
 			}
+			else
+			{
+				printf("\nOk");
+				exit(8);
+			}
 		}
 	 else
 		{
@@ -294,6 +304,46 @@ void login()
 		login();
 	    }
 	}
+	fclose(fp);
+}
+void delacc(struct registration R1)
+{
+	FILE *fp;
+	fp=fopen("C:/Users/sarwa/OneDrive/Desktop/C-lang/project_file.txt","w+");
+	R1.money=0;
+	int i,j,k,l,m,n;
+	for(i=0;i<sizeof(R1.fname);i++)
+	{
+		R1.fname[i]='\0';
+	}
+	for(j=0;j<sizeof(R1.lname);j++)
+	{
+		R1.lname[j]='\0';
+	}
+	for(k=0;k<sizeof(R1.phno);k++)
+	{
+		R1.phno[k]='\0';
+	}
+	for(l=0;l<sizeof(R1.accno);l++)
+	{
+		R1.accno[l]='\0';
+	}
+	for(m=0;m<sizeof(R1.username);m++)
+	{
+		R1.username[m]='\0';
+	}
+	for(n=0;n<sizeof(R1.password);n++)
+	{
+		R1.password[n]='\0';
+	}
+	printf("\nAccount Deleted Successfully");
+	int o;
+	for(o=0;o<20;o++)
+	{
+		Sleep(100);
+		printf(".");
+	}
+	main();
 	fclose(fp);
 }
 void withdraw(struct registration R1)
@@ -620,99 +670,225 @@ void fixed_dep(struct registration R1)
 }
 void loan(struct registration R1)
 {
-	int loan_am;
-	loan_am=(R1.money*80)/100;
-	printf("\nYour Loan has been Sanctioned.");
-	printf("\n%d amount has credited into your Account",loan_am);
-	R1.money=R1.money+loan_am;
-	int t;
-	if(loan_am>0 && loan_am<=10000)
+	int opt;
+	printf("\n1)Money Loan\t\t2)Gold Loan\nEnter one Option:");
+	scanf("%d",&opt);
+	switch(opt)
 	{
-		t=3;
-		printf("\nTime Period:%d years",t);
-	}
-	else if(loan_am>10000 && loan_am<=30000)
-	{
-		t=5;
-		printf("\nTime Period:%d years",t);
-	}
-	else if(loan_am>30000 && loan_am<=75000)
-	{
-		t=7;
-		printf("\nTime Period:%d years",t);
-	}
-	else if(loan_am>75000 && loan_am<=100000)
-	{
-		t=8;
-		printf("\nTime Period:%d years",t);
-	}
-	else if(loan_am>100000 && loan_am<=500000)
-	{
-		t=10;
-		printf("\nTime Period:%d years",t);
-	}
-	else if(loan_am>500000)
-	{
-		t=12;
-		printf("\nTime Period:%d years",t);
-	}
-	int r;
-	if(t>=0 && t<=3)
-	{
-		r=3;
-		printf("\nRate of Interest per Annum:%d\n",r);
-	}
-	else if(t>3 && t<=7)
-	{
+		case 1:
+			printf("\nMoney Loan:");
+			int loan_am;
+			int O;
+			FILE *fl;
+           fl=fopen("C:/Users/sarwa/OneDrive/Desktop/C-lang/loan1.txt","r");
+           while(fscanf(fl,"%d",&O)==1)
+	      {
+		     printf("\nLTV is : %d",O);
+	      }    
+	        fclose(fl);
+	        loan_am=(R1.money*O)/100;
+	        printf("\nYour Loan has been Sanctioned.");
+	       printf("\n%d amount has credited into your Account",loan_am);
+	        R1.money=R1.money+loan_am;
+	     int t;
+	     if(loan_am>0 && loan_am<=10000)
+	     {
+		    t=3;
+		    printf("\nTime Period:%d years",t);
+	     }
+	     else if(loan_am>10000 && loan_am<=30000)
+	     {
+		    t=5;
+		   printf("\nTime Period:%d years",t);
+	     }
+	     else if(loan_am>30000 && loan_am<=75000)
+	     {
+		    t=7;
+		    printf("\nTime Period:%d years",t);
+	     }
+	      else if(loan_am>75000 && loan_am<=100000)
+	    {
+		   t=8;
+		   printf("\nTime Period:%d years",t);
+	    }
+	    else if(loan_am>100000 && loan_am<=500000)
+	    {
+	    	t=10;
+	    	printf("\nTime Period:%d years",t);
+	    }
+	     else if(loan_am>500000)
+    	{
+	    	t=12;
+	    	printf("\nTime Period:%d years",t);
+	    }
+	     int r;
+	     if(t>=0 && t<=3)
+	     {
+		  r=3;
+		  printf("\nRate of Interest per Annum:%d\n",r);
+	     }
+	    else if(t>3 && t<=7)
+	    {
 		r=5;
 		printf("\nRate of Interest per Annum:%d\n",r);
+	    }
+	     else if(t>7 && t<=10)
+	    {
+	    	r=7;
+		  printf("\nRate of Interest per Annum:%d\n",r);
+	     }
+	    else if(t>10 && t<=20)
+	    {
+	    	r=9;
+	    	printf("\nRate of Interest per Annum:%d\n",r);
+	   }
+	     int h;
+	   for(h=0;h<20;h++)
+	    {
+		   Sleep(100);
+		   printf(".");
+	    }
+	    printf("\n");
+	    int D;
+	    D=100*t;
+	     int j;
+	    for(j=0;j<t;j++)
+	    {
+		   Sleep(D);
+	    	printf(".");
+	    }
+	     system("cls");
+	    system("color 06");
+	     int I;
+	     I=(loan_am*t*r)/100;
+	       int L;
+	      L=loan_am+I;
+	     R1.money=R1.money-L;
+	       printf("\nCurrent Balance:%d",R1.money);
+	     char k;
+	      printf("\nWant to see your Details?");
+	     scanf("%s",&k);
+	     if(k=='Y' || k=='y')
+	    {   
+	     	int p;
+	      for(p=0;p<10;p++)
+	     {
+		    Sleep(100);
+		    printf(".");
+	     }
+	     details(R1);
+         }
+	     break;
+	    case 2:
+	    	printf("\nGold Loan:");
+	    	int gl;
+	    	printf("\nEnter the price of Gold:");
+	    	scanf("%d",&gl);
+	    	int V;
+			FILE *fg;
+           fg=fopen("C:/Users/sarwa/OneDrive/Desktop/C-lang/loan2.txt","r");
+           while(fscanf(fg,"%d",&V)==1)
+	      {
+		     printf("\nLTV is : %d",V);
+	      }    
+	        fclose(fg);
+	    	int l_am=(gl*V)/100;
+	    	printf("\nYour Loan has been Sanctioned.");
+	       printf("\n%d amount has credited into your Account",l_am);
+	    	R1.money=R1.money+l_am;
+	     int T;
+	     if(l_am>0 && l_am<=10000)
+	     {
+		    T=1;
+		    printf("\nTime Period:%d years",T);
+	     }
+	     else if(l_am>10000 && l_am<=30000)
+	     {
+		    T=2;
+		   printf("\nTime Period:%d years",T);
+	     }
+	     else if(l_am>30000 && l_am<=75000)
+	     {
+		    T=3;
+		    printf("\nTime Period:%d years",T);
+	     }
+	      else if(l_am>75000 && l_am<=100000)
+	    {
+		   T=5;
+		   printf("\nTime Period:%d years",T);
+	    }
+	    else if(l_am>100000 && l_am<=500000)
+	    {
+	    	T=6;
+	    	printf("\nTime Period:%d years",T);
+	    }
+	     else if(l_am>500000)
+    	{
+	    	T=10;
+	    	printf("\nTime Period:%d years",T);
+	    }
+	     int R;
+	     if(T>=0 && T<=3)
+	     {
+		  R=1;
+		  printf("\nRate of Interest per Annum:%d\n",R);
+	     }
+	    else if(T>3 && T<=7)
+	    {
+		R=2;
+		printf("\nRate of Interest per Annum:%d\n",R);
+	    }
+	     else if(T>7 && T<=10)
+	    {
+	    	R=3;
+		  printf("\nRate of Interest per Annum:%d\n",R);
+	     }
+	    else if(T>10 && T<=20)
+	    {
+	    	R=5;
+	    	printf("\nRate of Interest per Annum:%d\n",R);
+	   }
+	    int H;
+	   for(H=0;H<20;H++)
+	    {
+		   Sleep(100);
+		   printf(".");
+	    }
+	    printf("\n");
+	    int d;
+	    d=100*T;
+	     int J;
+	    for(J=0;J<T;J++)
+	    {
+		   Sleep(D);
+	    	printf(".");
+	    }
+	     system("cls");
+	    system("color 06");
+	     int i;
+	     i=(l_am*T*R)/100;
+	       int l;
+	      l=l_am+i;
+	     R1.money=R1.money-l;
+	       printf("\nCurrent Balance:%d",R1.money);
+	     char K;
+	      printf("\nWant to see your Details?");
+	     scanf("%s",&k);
+	     if(K=='Y' || K=='y')
+	    {   
+	     	int P;
+	      for(P=0;P<10;P++)
+	     {
+		    Sleep(100);
+		    printf(".");
+	     }
+	     details(R1);
+         }
+         break;
+        default:
+        	loan(R1);
 	}
-	else if(t>7 && t<=10)
-	{
-		r=7;
-		printf("\nRate of Interest per Annum:%d\n",r);
-	}
-	else if(t>10 && t<=20)
-	{
-		r=9;
-		printf("\nRate of Interest per Annum:%d\n",r);
-	}
-	int h;
-	for(h=0;h<20;h++)
-	{
-		Sleep(100);
-		printf(".");
-	}
-	printf("\n");
-	int D;
-	D=100*t;
-	int j;
-	for(j=0;j<t;j++)
-	{
-		Sleep(D);
-		printf(".");
-	}
-	system("cls");
-	system("color 06");
-	int I;
-	I=(loan_am*t*r)/100;
-	int L;
-	L=loan_am+I;
-	R1.money=R1.money-L;
-	printf("\nCurrent Balance:%d",R1.money);
-	char k;
-	printf("\nWant to see your Details?");
-	scanf("%s",&k);
-	if(k=='Y' || k=='y')
-	{
-		int p;
-	  for(p=0;p<10;p++)
-	  {
-		  Sleep(100);
-		  printf(".");
-	  }
-	  details(R1);
-    }
+	
 }
 void steps()
 {
