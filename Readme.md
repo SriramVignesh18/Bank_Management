@@ -3,12 +3,12 @@ This is a Python implementation of the classic game Rock, Paper, Scissors, where
 # How to Play:
 When you start the game, you will be asked if you'd like to play. Type Y or y to begin, or N or n to exit.
 Once the game starts, you will be prompted to select your throw:
-1) 1 for Rock
-2) 2 for Paper
-3) 3 for Scissors
-4) 4 to Exit the game
+1 for Rock
+2 for Paper
+3 for Scissors
+4 to Exit the game
 After you make your choice, the computer will randomly select its throw.
-# The winner is determined by the following rules:
+The winner is determined by the following rules:
 1) Rock beats Scissors
 2) Scissors beats Paper
 3) Paper beats Rock
