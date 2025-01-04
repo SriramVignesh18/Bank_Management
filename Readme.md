@@ -11,3 +11,4 @@ In this Project,A simple game implementation was done.
 3) Game Loop: The game loop continues while the player's position is less than 100. The player's position updates based on the dice roll and the ladder or snake positions.
 4) Ladders and Snakes: The check_position() function in Python handles updating the player's position if they land on a ladder or snake.
 5) Throw Counting: The game tracks the number of dice throws. However, rolls of 6 do not count towards the throw count. Additionally, if a player's position exceeds 100 after a dice roll, that throw is not counted.
+**Note:** If you are on 94 then you rolled 6,then that throw is counted.
