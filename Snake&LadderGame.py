@@ -100,7 +100,7 @@ def main():
     
     choice = input("Would you like to Play the game?(Click Y or y if you want)\n\n")
     
-    if choice.lower() == 'y':
+    if choice.lower() == 'y' or 'Y':
         display_board()
         print("**WINNER WILL BE THE ONE WHO GETS TO 100 FIRST. THAT IS WITH MINIMUM NUMBER OF DICE THROWS..\n")
 
