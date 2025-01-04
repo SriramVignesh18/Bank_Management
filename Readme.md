@@ -1,13 +1,16 @@
-# Snake & Ladder's Game
-In this Project,A simple game implementation was done.
+# Rock, Paper, Scissors Game
+This is a Python implementation of the classic game Rock, Paper, Scissors, where you play against the computer. The game allows you to choose one of the three options (Rock, Paper, or Scissors) and compete against a randomly chosen option by the computer.
 # How to Play:
-1) The player is prompted whether they want to play.
-2) The player rolls a dice by pressing any key. The dice roll determines the number of steps they move forward.
-3) If they land on a snake, they move backwards; if they land on a ladder, they move forwards.
-4) The goal is to reach position 100 as quickly as possible.
-# Key Points to Note:
-1) Input/Output: In C, there are scanf and printf for input and output, respectively. In Python, input() is used for getting user input and print() for displaying messages.
-2) Random Dice Rolls: In C, rand() is used to generate random numbers, while in Python, random.randint(1, 6) is the equivalent.
-3) Game Loop: The game loop continues while the player's position is less than 100. The player's position updates based on the dice roll and the ladder or snake positions.
-4) Ladders and Snakes: The check_position() function in Python handles updating the player's position if they land on a ladder or snake.
-5) Throw Counting: The game tracks the number of dice throws. However, rolls of 6 do not count towards the throw count. Additionally, if a player's position exceeds 100 after a dice roll, that throw is not counted. But, if the player is on 94 then you rolled 6,then that throw is counted.
+When you start the game, you will be asked if you'd like to play. Type Y or y to begin, or N or n to exit.
+Once the game starts, you will be prompted to select your throw:
+1) 1 for Rock
+2) 2 for Paper
+3) 3 for Scissors
+4) 4 to Exit the game
+After you make your choice, the computer will randomly select its throw.
+The winner is determined by the following rules:
+1) Rock beats Scissors
+2) Scissors beats Paper
+3) Paper beats Rock
+4) If both the player and the computer choose the same option, it's a draw.
+The game will continue until you choose to exit.
