@@ -24,7 +24,7 @@ b) Position Handling: If the player lands on a ladder, their position is updated
 c) Dice Mechanics: The dice is rolled using rand(). The result is a random number between 1 and 6. If the roll is a 6, the player gets an extra chance to roll again.
 d) Throw Counting: The game tracks the number of dice throws. However, rolls of 6 do not count towards the throw count. But, if the player is on 94 then you rolled 6,then that throw is counted.
 # Color Definitions:
-We've defined some ANSI color escape codes using #define macros for better readability:
+I've defined some ANSI color escape codes using #define macros for better readability:
 a) RESET_COLOR → Resets the text color back to default.
 b) RED_COLOR → For snakes (bad spots).
 c) GREEN_COLOR → For ladders (good spots).
