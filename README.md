@@ -12,7 +12,7 @@ d) Ladders: If you land on a ladder's start position, you climb up to the ladder
 e) Snakes: If you land on a snake's mouth, you slide down to the snake's tail.
 f) Rolling a 6: If you roll a 6, you get another turn.
 g) Exceeding 100: If your move causes you to go beyond square 100, you remain in the same position.
-h) Counting Throws: Each dice throw is counted. However, throws of 6 are not counted toward the total throws. Additionally, if a player's position exceeds 100 after a roll, that throw is not counted either.
+h) Counting Throws: Each dice throw is counted. However, throws of 6 are not counted toward the total throws. Additionally, if a player's position exceeds 100 after a roll, that throw is not counted either.But, if the player is on 94 then you rolled 6,then that throw is counted.
 # How to Play:
 1) Download or clone the repository.
 2) Compile the C program using your preferred C compiler (e.g., gcc).
@@ -22,7 +22,7 @@ h) Counting Throws: Each dice throw is counted. However, throws of 6 are not cou
 a) Board Representation: The board is represented as a 10x10 grid of numbers from 1 to 100.
 b) Position Handling: If the player lands on a ladder, their position is updated to the top of the ladder. If they land on a snake, they slide down to the tail of the snake.
 c) Dice Mechanics: The dice is rolled using rand(). The result is a random number between 1 and 6. If the roll is a 6, the player gets an extra chance to roll again.
-d) Throw Counting: The game tracks the number of dice throws. However, rolls of 6 do not count towards the throw count. Additionally, if a player's position exceeds 100 after a dice roll, that throw is not counted.
+d) Throw Counting: The game tracks the number of dice throws. However, rolls of 6 do not count towards the throw count. Additionally, if a player's position exceeds 100 after a dice roll, that throw is not counted. But, if the player is on 94 then you rolled 6,then that throw is counted.
 # Color Definitions:
 We've defined some ANSI color escape codes using #define macros for better readability:
 a) RESET_COLOR → Resets the text color back to default.
