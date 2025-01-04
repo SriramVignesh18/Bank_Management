@@ -1,21 +1,13 @@
-# Bank_Management
-In this Project,We worked on Bank Management System.In this project we had used Some Functions which will do Bank Operations Like Withdrawal,Transfer,Loan,Fixed Deposit.
-1)Create Account Function:
-We can Create an Account by using this Function.We have to give our First name,Last name,Father name,Mother name,Phone number,User name and Password to Create an Account.
-2)Created Account Function:
-It shows that Our Account Has been created Successfully.And we have to give Minimum amount.
-3)Login Function:
-We can Login to Our Account with Username,Password.
-4)Delete Account Function:
-We can Delete our Account By using this Function If we want.
-5)Fixed Deposit,Transfer,Withdraw,Loan Functions: 
-These Functions will do Specific Operations as like what will Bank Softwares Do.
-6)Balance Functions:
-These will show Our Current Bank Balance.
-7)Details Functions:
-If we want to Check our Details then we Have to enter Y(For Yes) so that it will show Our Details.
-8)Steps Function:
-If we want to create account But we dont know How to Create it then This will be Useful.
-9)Main Functions:
-In these functions Switch Cases were there.We can select an Option accordingly.
-Apart from these,We had worked with Files.
+# Snake & Ladder's Game
+In this Project,A simple game implementation was done.
+# How to Play:
+1) The player is prompted whether they want to play.
+2) The player rolls a dice by pressing any key. The dice roll determines the number of steps they move forward.
+3) If they land on a snake, they move backwards; if they land on a ladder, they move forwards.
+4) The goal is to reach position 100 as quickly as possible.
+# Key Points to Note:
+1) Input/Output: In C, there are scanf and printf for input and output, respectively. In Python, input() is used for getting user input and print() for displaying messages.
+2) Random Dice Rolls: In C, rand() is used to generate random numbers, while in Python, random.randint(1, 6) is the equivalent.
+3) Game Loop: The game loop continues while the player's position is less than 100. The player's position updates based on the dice roll and the ladder or snake positions.
+4) Ladders and Snakes: The check_position() function in Python handles updating the player's position if they land on a ladder or snake.
+
