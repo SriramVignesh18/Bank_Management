@@ -166,10 +166,6 @@ int checkposition(int player)
 			   newposition=19;
 			   printf("\nBad Luck you are landed on a snake.Now you are on %d",newposition);
 			   break;
-		case 37:
-			   newposition=61;
-			   printf("\nWell done you are landed on a ladder.Now you are on %d",newposition);
-			   break;
 		case 54:
 			   newposition=25;
 			   printf("\nBad Luck you are landed on a snake.Now you are on %d",newposition);
@@ -177,10 +173,6 @@ int checkposition(int player)
 		case 51:
 			   newposition=67;
 			   printf("\nWell done you are landed on a ladder.Now you are on %d",newposition);
-			   break;
-		case 87:
-			   newposition=36;
-			   printf("\nBad Luck you are landed on a snake.Now you are on %d",newposition);
 			   break;
 		case 72:
 			   newposition=91;
@@ -212,4 +204,4 @@ int checkposition(int player)
 	    
 	}
 	return 0;
-} 
+}
